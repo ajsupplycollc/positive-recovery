@@ -456,8 +456,15 @@ img {
   opacity: 0.8;
 }
 
+.hero-float-cards-row {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
 .hero-float-card {
   position: absolute;
+  pointer-events: auto;
   background: white;
   border-radius: var(--radius-lg);
   padding: 16px 20px;
@@ -1491,21 +1498,37 @@ img {
   }
 
   .hero-float-card {
-    padding: 12px 16px;
+    position: static;
+    animation: none !important;
+    padding: 10px 14px;
+  }
+
+  .hero-visual {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero-float-cards-row {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    pointer-events: auto;
   }
 
   .hero-float-card-value {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .hero-float-card-text {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .hero-float-card-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
   }
 
   .hero-stats {
@@ -1562,13 +1585,8 @@ img {
     inset: 20px;
   }
 
-  .hero-float-1,
-  .hero-float-3 {
-    right: -10px;
-  }
-
-  .hero-float-2 {
-    left: -10px;
+  .hero-float-cards-row {
+    gap: 8px;
   }
 
   .impact-grid {
@@ -1685,25 +1703,27 @@ section[id] {
           <div class="hero-circle-text">Healing Together</div>
         </div>
       </div>
-      <div class="hero-float-card hero-float-1">
-        <div class="hero-float-card-icon">&#x1F3E0;</div>
-        <div>
-          <div class="hero-float-card-text">Partner Facility</div>
-          <div class="hero-float-card-value">Jimmy Safe Place</div>
+      <div class="hero-float-cards-row">
+        <div class="hero-float-card hero-float-1">
+          <div class="hero-float-card-icon">&#x1F3E0;</div>
+          <div>
+            <div class="hero-float-card-text">Partner Facility</div>
+            <div class="hero-float-card-value">Jimmy Safe Place</div>
+          </div>
         </div>
-      </div>
-      <div class="hero-float-card hero-float-2">
-        <div class="hero-float-card-icon">&#x1F43E;</div>
-        <div>
-          <div class="hero-float-card-text">Our Mission</div>
-          <div class="hero-float-card-value">Dual Recovery</div>
+        <div class="hero-float-card hero-float-2">
+          <div class="hero-float-card-icon">&#x1F43E;</div>
+          <div>
+            <div class="hero-float-card-text">Our Mission</div>
+            <div class="hero-float-card-value">Dual Recovery</div>
+          </div>
         </div>
-      </div>
-      <div class="hero-float-card hero-float-3">
-        <div class="hero-float-card-icon">&#x1F497;</div>
-        <div>
-          <div class="hero-float-card-text">Building</div>
-          <div class="hero-float-card-value">Second Chances</div>
+        <div class="hero-float-card hero-float-3">
+          <div class="hero-float-card-icon">&#x1F497;</div>
+          <div>
+            <div class="hero-float-card-text">Building</div>
+            <div class="hero-float-card-value">Second Chances</div>
+          </div>
         </div>
       </div>
     </div>
