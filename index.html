@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Positive Recovery | Animal Rescue & Rehabilitation</title>
+<meta name="description" content="Positive Recovery is a 501(c)(3) nonprofit animal rescue and rehabilitation organization in Miami, FL. Rescue. Rehabilitate. Connect.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green-900: #1a3a2a;
+  --green-800: #234d38;
+  --green-700: #2d6147;
+  --green-600: #3a7d5c;
+  --green-500: #4a9970;
+  --green-400: #6db88e;
+  --green-300: #9ad4b2;
+  --green-200: #c5e8d5;
+  --green-100: #e8f5ee;
+  --green-50: #f3faf6;
+
+  --amber-700: #b45309;
+  --amber-600: #d97706;
+  --amber-500: #f59e0b;
+  --amber-400: #fbbf24;
+  --amber-300: #fcd34d;
+  --amber-200: #fde68a;
+  --amber-100: #fef3c7;
+  --amber-50: #fffbeb;
+
+  --orange-600: #ea580c;
+  --orange-500: #f97316;
+  --orange-400: #fb923c;
+
+  --cream: #fefcf3;
+  --cream-dark: #f9f3e3;
+  --warm-white: #fdfbf7;
+  --warm-gray-100: #f5f0e8;
+  --warm-gray-200: #e8e0d0;
+  --warm-gray-400: #a89880;
+  --warm-gray-600: #6b5e4f;
+  --warm-gray-800: #3d3429;
+  --warm-gray-900: #2a231c;
+
+  --text-primary: #2a231c;
+  --text-secondary: #5a4f42;
+  --text-muted: #8a7e70;
+
+  --shadow-sm: 0 1px 2px rgba(42,35,28,0.06);
+  --shadow-md: 0 4px 12px rgba(42,35,28,0.08);
+  --shadow-lg: 0 8px 30px rgba(42,35,28,0.10);
+  --shadow-xl: 0 16px 50px rgba(42,35,28,0.12);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+  background: var(--warm-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(253,251,247,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(42,35,28,0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.nav.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--green-600), var(--green-400));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+  box-shadow: 0 2px 8px rgba(58,125,92,0.3);
+}
+
+.nav-logo-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: var(--green-800);
+  letter-spacing: -0.3px;
+}
+
+.nav-logo-text span {
+  color: var(--amber-600);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--amber-500), var(--orange-500)) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 10px 22px !important;
+  box-shadow: 0 2px 8px rgba(249,115,22,0.25);
+}
+
+.nav-cta:hover {
+  background: linear-gradient(135deg, var(--amber-600), var(--orange-600)) !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(249,115,22,0.35);
+}
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--text-primary);
+}
+
+.nav-mobile-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(165deg, var(--green-50) 0%, var(--cream) 40%, var(--amber-50) 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(74,153,112,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 560px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px 6px 8px;
+  background: white;
+  border: 1px solid var(--green-200);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-700);
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--green-500);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5.5vw, 64px);
+  color: var(--green-900);
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.hero h1 .highlight {
+  color: var(--amber-600);
+  position: relative;
+}
+
+.hero h1 .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--amber-200);
+  border-radius: 3px;
+  z-index: -1;
+}
+
+.hero-subtitle {
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--text-secondary);
+  margin-top: 20px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--green-600), var(--green-500));
+  color: white;
+  box-shadow: 0 4px 14px rgba(58,125,92,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(58,125,92,0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--green-700);
+  border: 2px solid var(--green-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--green-50);
+  border-color: var(--green-400);
+  transform: translateY(-1px);
+}
+
+.btn-donate {
+  background: linear-gradient(135deg, var(--amber-500), var(--orange-500));
+  color: white;
+  box-shadow: 0 4px 14px rgba(249,115,22,0.3);
+}
+
+.btn-donate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249,115,22,0.4);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--warm-gray-200);
+}
+
+.hero-stat {
+  text-align: left;
+}
+
+.hero-stat-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  color: var(--green-700);
+}
+
+.hero-stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Hero visual */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-visual-main {
+  width: 420px;
+  height: 420px;
+  position: relative;
+}
+
+.hero-circle-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-200) 0%, var(--amber-100) 100%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-circle-inner {
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-300) 0%, var(--green-100) 50%, var(--amber-200) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: inset 0 -4px 20px rgba(42,35,28,0.05);
+}
+
+.hero-circle-emoji {
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.hero-circle-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+  color: var(--green-800);
+  opacity: 0.8;
+}
+
+.hero-float-card {
+  position: absolute;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-float-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.hero-float-card-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hero-float-card-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hero-float-1 {
+  top: 40px;
+  right: -10px;
+  animation: float-card 5s ease-in-out infinite;
+}
+
+.hero-float-1 .hero-float-card-icon {
+  background: var(--green-100);
+}
+
+.hero-float-2 {
+  bottom: 60px;
+  left: -20px;
+  animation: float-card 5s ease-in-out infinite 1.5s;
+}
+
+.hero-float-2 .hero-float-card-icon {
+  background: var(--amber-100);
+}
+
+.hero-float-3 {
+  bottom: 180px;
+  right: -30px;
+  animation: float-card 5s ease-in-out infinite 3s;
+}
+
+.hero-float-3 .hero-float-card-icon {
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes float-card {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Decorative paw prints */
+.paw-trail {
+  position: absolute;
+  opacity: 0.06;
+  font-size: 28px;
+  color: var(--green-800);
+  z-index: 1;
+}
+
+.paw-1 { top: 20%; left: 5%; transform: rotate(-25deg); }
+.paw-2 { top: 35%; left: 8%; transform: rotate(-10deg); }
+.paw-3 { bottom: 25%; right: 3%; transform: rotate(15deg); }
+.paw-4 { bottom: 15%; right: 7%; transform: rotate(30deg); }
+
+/* ============================================
+   SECTION SHARED STYLES
+   ============================================ */
+.section {
+  padding: 100px 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-600);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  width: 20px;
+  height: 1.5px;
+  background: var(--green-400);
+  border-radius: 1px;
+}
+
+.section-title {
+  font-size: clamp(32px, 4vw, 46px);
+  color: var(--green-900);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.section-desc {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about {
+  background: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-visual-card {
+  background: linear-gradient(135deg, var(--green-100) 0%, var(--cream) 100%);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-visual-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(74,153,112,0.1), transparent 70%);
+  border-radius: 50%;
+}
+
+.about-icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-icon-cell {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+}
+
+.about-icon-cell:hover {
+  transform: translateY(-4px);
+}
+
+.about-icon-cell-emoji {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.about-icon-cell-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.about-icon-cell-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.about-content h2 {
+  font-size: clamp(30px, 3.5vw, 42px);
+  color: var(--green-900);
+  margin-bottom: 24px;
+}
+
+.about-content p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-highlight {
+  background: linear-gradient(135deg, var(--green-50), var(--amber-50));
+  border-left: 4px solid var(--green-500);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+
+.about-highlight p {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--green-800);
+  margin-bottom: 0;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.about-tag {
+  padding: 6px 14px;
+  background: var(--green-100);
+  color: var(--green-700);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+}
+
+/* ============================================
+   PROGRAMS / WHAT WE DO
+   ============================================ */
+.programs {
+  background: linear-gradient(180deg, var(--warm-white) 0%, var(--green-50) 100%);
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.program-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.35s ease;
+  border: 1px solid rgba(42,35,28,0.04);
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.program-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+}
+
+.program-card:nth-child(1)::before {
+  background: linear-gradient(90deg, var(--green-500), var(--green-300));
+}
+
+.program-card:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--amber-500), var(--amber-300));
+}
+
+.program-card:nth-child(3)::before {
+  background: linear-gradient(90deg, var(--orange-500), var(--orange-400));
+}
+
+.program-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.program-card:nth-child(1) .program-icon {
+  background: linear-gradient(135deg, var(--green-100), var(--green-200));
+}
+
+.program-card:nth-child(2) .program-icon {
+  background: linear-gradient(135deg, var(--amber-100), var(--amber-200));
+}
+
+.program-card:nth-child(3) .program-icon {
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+}
+
+.program-card h3 {
+  font-size: 22px;
+  color: var(--green-900);
+  margin-bottom: 14px;
+}
+
+.program-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.program-features {
+  list-style: none;
+  padding: 0;
+}
+
+.program-features li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-bottom: 1px solid var(--warm-gray-100);
+}
+
+.program-features li:last-child {
+  border-bottom: none;
+}
+
+.program-features li::before {
+  content: '\2713';
+  color: var(--green-500);
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   IMPACT NUMBERS
+   ============================================ */
+.impact {
+  background: linear-gradient(135deg, var(--green-800) 0%, var(--green-900) 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03), transparent 70%);
+  border-radius: 50%;
+}
+
+.impact::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(251,191,36,0.06), transparent 70%);
+  border-radius: 50%;
+}
+
+.impact .section-label {
+  color: var(--green-300);
+}
+
+.impact .section-label::before,
+.impact .section-label::after {
+  background: var(--green-500);
+}
+
+.impact .section-title {
+  color: white;
+}
+
+.impact .section-desc {
+  color: rgba(255,255,255,0.7);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.impact-card {
+  text-align: center;
+  padding: 36px 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.impact-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+}
+
+.impact-card-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.impact-card-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 42px;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, white, var(--amber-300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.impact-card-label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+
+/* ============================================
+   HOW TO HELP
+   ============================================ */
+.help {
+  background: white;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.help-card {
+  text-align: center;
+  padding: 48px 32px 40px;
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--warm-gray-100);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.help-card:hover {
+  border-color: var(--green-300);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.help-card-number {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--green-500), var(--green-400));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.help-card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+}
+
+.help-card:nth-child(1) .help-card-icon {
+  background: linear-gradient(135deg, var(--green-100), var(--green-200));
+}
+
+.help-card:nth-child(2) .help-card-icon {
+  background: linear-gradient(135deg, var(--amber-100), var(--amber-200));
+}
+
+.help-card:nth-child(3) .help-card-icon {
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+}
+
+.help-card h3 {
+  font-size: 22px;
+  color: var(--green-900);
+  margin-bottom: 12px;
+}
+
+.help-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.help-card .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================
+   DONATE / CTA SECTION
+   ============================================ */
+.donate {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--amber-50) 50%, var(--green-50) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.donate::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(251,191,36,0.08), transparent 70%);
+  border-radius: 50%;
+}
+
+.donate-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.donate-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber-200), var(--amber-100));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  box-shadow: 0 8px 32px rgba(251,191,36,0.2);
+}
+
+.donate-content h2 {
+  font-size: clamp(32px, 4vw, 46px);
+  color: var(--green-900);
+  margin-bottom: 16px;
+}
+
+.donate-content p {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.donate-amounts {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.donate-amount {
+  padding: 12px 28px;
+  background: white;
+  border: 2px solid var(--warm-gray-200);
+  border-radius: var(--radius-full);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.donate-amount:hover,
+.donate-amount.active {
+  border-color: var(--amber-500);
+  background: var(--amber-50);
+  color: var(--amber-700);
+}
+
+.donate-amount.active {
+  background: var(--amber-100);
+  box-shadow: 0 0 0 2px rgba(245,158,11,0.2);
+}
+
+.donate-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
+
+.donate-note strong {
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.contact {
+  background: var(--warm-white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-size: clamp(30px, 3.5vw, 42px);
+  color: var(--green-900);
+  margin-bottom: 16px;
+}
+
+.contact-info > p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--warm-gray-100);
+  transition: all 0.25s ease;
+}
+
+.contact-method:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--green-200);
+}
+
+.contact-method-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.contact-method:nth-child(1) .contact-method-icon {
+  background: var(--green-100);
+}
+
+.contact-method:nth-child(2) .contact-method-icon {
+  background: var(--amber-100);
+}
+
+.contact-method:nth-child(3) .contact-method-icon {
+  background: #e8eaf6;
+}
+
+.contact-method h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.contact-method p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.contact-method a {
+  color: var(--green-600);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.contact-method a:hover {
+  color: var(--green-700);
+  text-decoration: underline;
+}
+
+/* Contact form */
+.contact-form-wrapper {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--warm-gray-100);
+}
+
+.contact-form-wrapper h3 {
+  font-size: 22px;
+  color: var(--green-900);
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  border: 2px solid var(--warm-gray-200);
+  border-radius: var(--radius-md);
+  background: var(--warm-white);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--green-400);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(74,153,112,0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--green-600), var(--green-500));
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(58,125,92,0.3);
+}
+
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(58,125,92,0.4);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--green-900);
+  color: rgba(255,255,255,0.7);
+  padding: 64px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-brand-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--green-500), var(--green-400));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(74,153,112,0.3);
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.footer-tax {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
+}
+
+.footer-bottom-links a:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-visual-main {
+    width: 320px;
+    height: 320px;
+  }
+
+  .hero-float-1 { right: 0; }
+  .hero-float-2 { left: 0; }
+  .hero-float-3 { right: 0; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(253,251,247,0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--warm-gray-200);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  .nav-mobile-toggle {
+    display: block;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 72px;
+  }
+
+  .hero-content {
+    padding: 100px 24px 60px;
+  }
+
+  .hero-visual-main {
+    width: 260px;
+    height: 260px;
+  }
+
+  .hero-circle-emoji {
+    font-size: 56px;
+  }
+
+  .hero-float-card {
+    padding: 12px 16px;
+  }
+
+  .hero-float-card-value {
+    font-size: 16px;
+  }
+
+  .hero-float-card-text {
+    font-size: 12px;
+  }
+
+  .hero-float-card-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .programs-grid,
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .donate-amounts {
+    gap: 8px;
+  }
+
+  .donate-amount {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-visual-main {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-circle-inner {
+    inset: 20px;
+  }
+
+  .hero-float-1,
+  .hero-float-3 {
+    right: -10px;
+  }
+
+  .hero-float-2 {
+    left: -10px;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-card-number {
+    font-size: 36px;
+  }
+
+  .contact-form-wrapper {
+    padding: 28px 20px;
+  }
+}
+
+/* ============================================
+   SMOOTH SCROLL OFFSET
+   ============================================ */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* ============================================
+   ANIMATIONS ON SCROLL
+   ============================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger-children .fade-in:nth-child(1) { transition-delay: 0ms; }
+.stagger-children .fade-in:nth-child(2) { transition-delay: 100ms; }
+.stagger-children .fade-in:nth-child(3) { transition-delay: 200ms; }
+.stagger-children .fade-in:nth-child(4) { transition-delay: 300ms; }
+</style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">&#x1F43E;</div>
+      <div class="nav-logo-text">Positive <span>Recovery</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#help">Get Involved</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#donate" class="nav-cta">Donate</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <div class="paw-trail paw-1">&#x1F43E;</div>
+  <div class="paw-trail paw-2">&#x1F43E;</div>
+  <div class="paw-trail paw-3">&#x1F43E;</div>
+  <div class="paw-trail paw-4">&#x1F43E;</div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        501(c)(3) Nonprofit Organization
+      </div>
+      <h1>Rescue. Rehabilitate. <span class="highlight">Reconnect.</span></h1>
+      <p class="hero-subtitle">
+        Positive Recovery gives rescued animals a second chance at life while
+        empowering individuals in recovery to heal through the transformative
+        bond of animal care.
+      </p>
+      <div class="hero-actions">
+        <a href="#donate" class="btn btn-donate">&#10084;&#65039; Make a Donation</a>
+        <a href="#programs" class="btn btn-secondary">Our Programs</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">Miami, FL</div>
+          <div class="hero-stat-label">Headquartered</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">Broward</div>
+          <div class="hero-stat-label">Expanding Into</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">2-in-1</div>
+          <div class="hero-stat-label">Recovery Model</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-visual-main">
+        <div class="hero-circle-outer"></div>
+        <div class="hero-circle-inner">
+          <div class="hero-circle-emoji">&#x1F436;&#x1F49A;</div>
+          <div class="hero-circle-text">Healing Together</div>
+        </div>
+      </div>
+      <div class="hero-float-card hero-float-1">
+        <div class="hero-float-card-icon">&#x1F3E0;</div>
+        <div>
+          <div class="hero-float-card-text">Partner Facility</div>
+          <div class="hero-float-card-value">Jimmy Safe Place</div>
+        </div>
+      </div>
+      <div class="hero-float-card hero-float-2">
+        <div class="hero-float-card-icon">&#x1F43E;</div>
+        <div>
+          <div class="hero-float-card-text">Our Mission</div>
+          <div class="hero-float-card-value">Dual Recovery</div>
+        </div>
+      </div>
+      <div class="hero-float-card hero-float-3">
+        <div class="hero-float-card-icon">&#x1F497;</div>
+        <div>
+          <div class="hero-float-card-text">Building</div>
+          <div class="hero-float-card-value">Second Chances</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-in">
+        <div class="about-visual-card">
+          <div class="about-icon-grid">
+            <div class="about-icon-cell">
+              <div class="about-icon-cell-emoji">&#x1F415;</div>
+              <div class="about-icon-cell-label">Animal Rescue</div>
+              <div class="about-icon-cell-sub">Intake &amp; Medical Care</div>
+            </div>
+            <div class="about-icon-cell">
+              <div class="about-icon-cell-emoji">&#x1F91D;</div>
+              <div class="about-icon-cell-label">Human Recovery</div>
+              <div class="about-icon-cell-sub">Purpose Through Care</div>
+            </div>
+            <div class="about-icon-cell">
+              <div class="about-icon-cell-emoji">&#x1F331;</div>
+              <div class="about-icon-cell-label">Rehabilitation</div>
+              <div class="about-icon-cell-sub">Behavioral Training</div>
+            </div>
+            <div class="about-icon-cell">
+              <div class="about-icon-cell-emoji">&#x1F3E1;</div>
+              <div class="about-icon-cell-label">Forever Homes</div>
+              <div class="about-icon-cell-sub">Adoption &amp; Placement</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <h2>Two Recoveries. One Mission.</h2>
+        <p>
+          Positive Recovery was founded on a simple but powerful idea: healing happens
+          best when it's shared. We rescue animals from shelters, streets, and
+          dangerous situations &mdash; and we pair them with residents of sober living
+          facilities who are rebuilding their own lives.
+        </p>
+        <div class="about-highlight">
+          <p>
+            "When someone in recovery cares for an animal that also needs
+            saving, both lives are transformed. Responsibility becomes
+            purpose. Compassion becomes healing."
+          </p>
+        </div>
+        <p>
+          Through our partnership with <strong>Jimmy Safe Place of South Florida</strong>,
+          a licensed sober living facility, residents gain structured responsibility,
+          emotional connection, and daily purpose by helping rehabilitate rescued
+          animals. The animals receive the consistent care, patience, and love they
+          need to heal and find forever homes.
+        </p>
+        <div class="about-tags">
+          <span class="about-tag">&#x1F43E; Animal Rescue</span>
+          <span class="about-tag">&#x1F49A; Recovery Support</span>
+          <span class="about-tag">&#x1F3E0; Sober Living Partnership</span>
+          <span class="about-tag">&#x1F4CB; 501(c)(3) Certified</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROGRAMS ========== -->
+<section class="section programs" id="programs">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Programs That Transform Lives</h2>
+      <p class="section-desc">
+        Every program at Positive Recovery is designed around our dual-recovery
+        model &mdash; creating outcomes for both rescued animals and the people
+        who care for them.
+      </p>
+    </div>
+    <div class="programs-grid stagger-children">
+      <div class="program-card fade-in">
+        <div class="program-icon">&#x1F6A8;</div>
+        <h3>Animal Rescue &amp; Intake</h3>
+        <p>
+          We pull animals from overcrowded shelters, respond to emergency
+          surrender situations, and rescue strays from dangerous conditions
+          across Miami-Dade and Broward counties.
+        </p>
+        <ul class="program-features">
+          <li>Emergency intake from kill-list shelters</li>
+          <li>Veterinary assessment and medical care</li>
+          <li>Behavioral evaluation and needs planning</li>
+          <li>Safe temporary housing and stabilization</li>
+        </ul>
+      </div>
+      <div class="program-card fade-in">
+        <div class="program-icon">&#x1F31F;</div>
+        <h3>Pet Rehabilitation</h3>
+        <p>
+          Many rescued animals arrive traumatized, undertrained, or with medical
+          needs. Our rehabilitation program provides the time and care they
+          need to become adoptable.
+        </p>
+        <ul class="program-features">
+          <li>Structured behavioral rehabilitation</li>
+          <li>Socialization with people and other animals</li>
+          <li>Ongoing veterinary and nutritional support</li>
+          <li>Adoption readiness preparation</li>
+        </ul>
+      </div>
+      <div class="program-card fade-in">
+        <div class="program-icon">&#x1F91D;</div>
+        <h3>Sober Living Partnership</h3>
+        <p>
+          Through our partnership with Jimmy Safe Place of South Florida,
+          residents in recovery provide daily care for rescued animals &mdash;
+          building responsibility, routine, and emotional connection.
+        </p>
+        <ul class="program-features">
+          <li>Daily animal care responsibilities for residents</li>
+          <li>Structured routine that supports sobriety</li>
+          <li>Emotional bonding and stress reduction</li>
+          <li>Job skills in animal care and handling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== IMPACT ========== -->
+<section class="section impact" id="impact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Impact</div>
+      <h2 class="section-title">Building a Community of Recovery</h2>
+      <p class="section-desc">
+        Based in Miami and expanding across South Florida, we are growing our
+        capacity to serve more animals and more people every year.
+      </p>
+    </div>
+    <div class="impact-grid stagger-children">
+      <div class="impact-card fade-in">
+        <div class="impact-card-icon">&#x1F43E;</div>
+        <div class="impact-card-number">100+</div>
+        <div class="impact-card-label">Animals Rescued</div>
+      </div>
+      <div class="impact-card fade-in">
+        <div class="impact-card-icon">&#x1F3E1;</div>
+        <div class="impact-card-number">1</div>
+        <div class="impact-card-label">Partner Facility</div>
+      </div>
+      <div class="impact-card fade-in">
+        <div class="impact-card-icon">&#x1F4CD;</div>
+        <div class="impact-card-number">2</div>
+        <div class="impact-card-label">Counties Served</div>
+      </div>
+      <div class="impact-card fade-in">
+        <div class="impact-card-icon">&#x1F49A;</div>
+        <div class="impact-card-number">&infin;</div>
+        <div class="impact-card-label">Second Chances</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== HOW TO HELP ========== -->
+<section class="section help" id="help">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Get Involved</div>
+      <h2 class="section-title">How You Can Help</h2>
+      <p class="section-desc">
+        Whether you can give your time, your home, or your support &mdash;
+        every contribution directly impacts the lives of animals and people
+        in recovery.
+      </p>
+    </div>
+    <div class="help-grid stagger-children">
+      <div class="help-card fade-in">
+        <div class="help-card-number">1</div>
+        <div class="help-card-icon">&#x1F64B;</div>
+        <h3>Volunteer</h3>
+        <p>
+          Help with animal care, transport, event coordination, or administrative
+          support. No experience necessary &mdash; just a willingness to make
+          a difference.
+        </p>
+        <a href="#contact" class="btn btn-secondary">Sign Up to Volunteer</a>
+      </div>
+      <div class="help-card fade-in">
+        <div class="help-card-number">2</div>
+        <div class="help-card-icon">&#x1F3E0;</div>
+        <h3>Foster</h3>
+        <p>
+          Open your home to an animal in need. Fostering provides critical
+          temporary housing while we find permanent placements and helps
+          socialize animals for adoption.
+        </p>
+        <a href="#contact" class="btn btn-secondary">Become a Foster</a>
+      </div>
+      <div class="help-card fade-in">
+        <div class="help-card-number">3</div>
+        <div class="help-card-icon">&#10084;&#65039;</div>
+        <h3>Donate</h3>
+        <p>
+          Your tax-deductible donation covers veterinary care, food, shelter
+          supplies, and program operations. Every dollar goes directly to
+          supporting our mission.
+        </p>
+        <a href="#donate" class="btn btn-donate">Make a Donation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DONATE CTA ========== -->
+<section class="section donate" id="donate">
+  <div class="container">
+    <div class="donate-content">
+      <div class="donate-icon">&#x1F49B;</div>
+      <h2>Support Dual Recovery</h2>
+      <p>
+        Your generous donation is 100% tax-deductible and directly funds
+        animal rescue, veterinary care, rehabilitation programs, and our
+        partnership with sober living facilities across South Florida.
+      </p>
+      <div class="donate-amounts">
+        <button class="donate-amount" onclick="selectAmount(this)">$25</button>
+        <button class="donate-amount" onclick="selectAmount(this)">$50</button>
+        <button class="donate-amount active" onclick="selectAmount(this)">$100</button>
+        <button class="donate-amount" onclick="selectAmount(this)">$250</button>
+        <button class="donate-amount" onclick="selectAmount(this)">$500</button>
+        <button class="donate-amount" onclick="selectAmount(this)">Other</button>
+      </div>
+      <a href="mailto:jamesgutches@gmail.com?subject=Donation%20Inquiry%20-%20Positive%20Recovery&body=Hi%20James%2C%0A%0AI%E2%80%99d%20like%20to%20make%20a%20donation%20to%20Positive%20Recovery.%20Please%20let%20me%20know%20how%20I%20can%20contribute.%0A%0AThank%20you!" class="btn btn-donate" style="font-size: 17px; padding: 16px 40px;">
+        &#10084;&#65039; Donate Now
+      </a>
+      <p class="donate-note">
+        <strong>Positive Recovery is a registered 501(c)(3) nonprofit.</strong><br>
+        All donations are tax-deductible to the full extent of the law.
+        A receipt will be provided for your records.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <h2>Let's Connect</h2>
+        <p>
+          Whether you want to volunteer, foster, donate, or just learn more about
+          our mission &mdash; we'd love to hear from you. Reach out and a member
+          of our team will get back to you promptly.
+        </p>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon">&#x1F4DE;</div>
+            <div>
+              <h4>Call Us</h4>
+              <p>(XXX) XXX-XXXX</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">&#x2709;&#xFE0F;</div>
+            <div>
+              <h4>Email Us</h4>
+              <p><a href="mailto:jamesgutches@gmail.com">jamesgutches@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">&#x1F4CD;</div>
+            <div>
+              <h4>Visit Us</h4>
+              <p>4935 NW 180 Terrace<br>Miami, FL 33055</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrapper fade-in">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="interest">I'm Interested In</label>
+            <select id="interest" name="interest">
+              <option value="" disabled selected>Select an option</option>
+              <option value="volunteer">Volunteering</option>
+              <option value="foster">Fostering an Animal</option>
+              <option value="donate">Making a Donation</option>
+              <option value="partnership">Partnership Opportunity</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us how you'd like to help or what you'd like to know..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-icon">&#x1F43E;</div>
+        <p>
+          Positive Recovery is a 501(c)(3) nonprofit animal rescue and
+          rehabilitation organization based in Miami, FL. We believe in the
+          transformative power of the human-animal bond.
+        </p>
+        <div class="footer-tax">&#x2705; Tax-Exempt 501(c)(3) Organization</div>
+      </div>
+      <div>
+        <h4>Organization</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Our Programs</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get Involved</h4>
+        <ul class="footer-links">
+          <li><a href="#help">Volunteer</a></li>
+          <li><a href="#help">Foster</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#contact">Partnerships</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:jamesgutches@gmail.com">jamesgutches@gmail.com</a></li>
+          <li><a href="tel:">(XXX) XXX-XXXX</a></li>
+          <li>4935 NW 180 Terrace</li>
+          <li>Miami, FL 33055</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Positive Recovery. All rights reserved. A 501(c)(3) nonprofit organization.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+// ---- Navigation scroll effect ----
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ---- Mobile menu toggle ----
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+
+mobileToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+// Close mobile menu on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
+
+// ---- Donation amount selection ----
+function selectAmount(btn) {
+  document.querySelectorAll('.donate-amount').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ---- Contact form handler ----
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const subject = encodeURIComponent('Website Inquiry - Positive Recovery');
+  const body = encodeURIComponent(
+    `Name: ${data.get('firstName')} ${data.get('lastName')}\n` +
+    `Email: ${data.get('email')}\n` +
+    `Interest: ${data.get('interest')}\n\n` +
+    `Message:\n${data.get('message')}`
+  );
+  window.location.href = `mailto:jamesgutches@gmail.com?subject=${subject}&body=${body}`;
+}
+
+// ---- Scroll animations ----
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -40px 0px'
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ---- Smooth scroll for anchor links ----
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
